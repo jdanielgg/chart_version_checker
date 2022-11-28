@@ -35,24 +35,26 @@ Error Code:
 
 	parsedChart, err := readChart(chart)
 	if err != nil {
+		log.Print("Error parsing chart")
 		log.Print(err)
-        // we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
-        os.Exit(126)
+		// we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
+		os.Exit(126)
 	}
 
 	appName := parsedChart.Name
 	chartVersion, err := semver.NewVersion(parsedChart.Version)
 	if err != nil {
+		log.Print("Error parsing index")
 		log.Print(err)
-        // we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
-        os.Exit(126)
+		// we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
+		os.Exit(126)
 	}
 
 	latestInIndex, err := getLatest(appName, index)
 	if err != nil {
 		log.Print(err)
-        // we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
-        os.Exit(126)
+		// we took the exit code forme https://tldp.org/LDP/abs/html/exitcodes.html
+		os.Exit(126)
 	}
 
 	if latestInIndex.Compare(chartVersion) >= 0 { // Chart greatre than latest
