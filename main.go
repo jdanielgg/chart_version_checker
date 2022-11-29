@@ -6,7 +6,7 @@ import (
 	"os"
 	"io/ioutil"
 	"log"
-	"gopkg.in/yaml.v3"
+	"gopkg.in/yaml.v2"
 	"github.com/docopt/docopt-go"
 	"github.com/Masterminds/semver"
 )
