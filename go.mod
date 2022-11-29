@@ -1,4 +1,4 @@
-module chart_checker
+module espiridion87/chart_checker
 
 go 1.13
 
