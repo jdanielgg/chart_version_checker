@@ -49,7 +49,7 @@ main() {
         error "Minor version on chart is older than the last published"
         exit 1
     elif [ $chart_patch -le $index_patch ]; then
-        error "Minor version on chart is older than the last published"
+        error "Patch version on chart is older than the last published"
         exit 1
     fi
 }
